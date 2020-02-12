@@ -1,0 +1,9 @@
+ 	<a class="btn btn-lg1 btn-info" href="/"> HOME </a>
+
+    <form method="post" action="/" style= "display:inline">
+
+        {% csrf_token %}
+        <input type="text" value="excel" name="excel" style="display:none"/>  
+        <button class="btn btn-lg1 btn-info" type="submit"> 自定义按钮 </button>
+       
+    </form>
