@@ -30,11 +30,7 @@ function removeChildren(a) {
 
 // ----------------------------------------------------------------------------
 // Find-position functions by PPK
-<<<<<<< HEAD
 // See https://www.quirksmode.org/js/findpos.html
-=======
-// See http://www.quirksmode.org/js/findpos.html
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
 // ----------------------------------------------------------------------------
 function findPosX(obj) {
     'use strict';
@@ -157,15 +153,9 @@ function findPosY(obj) {
         return result;
     };
 
-<<<<<<< HEAD
     // ----------------------------------------------------------------------------
     // String object extensions
     // ----------------------------------------------------------------------------
-=======
-// ----------------------------------------------------------------------------
-// String object extensions
-// ----------------------------------------------------------------------------
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
     String.prototype.pad_left = function(pad_length, pad_string) {
         var new_string = this;
         for (var i = 0; new_string.length < pad_length; i++) {
@@ -181,7 +171,6 @@ function findPosY(obj) {
         var day, month, year;
         while (i < split_format.length) {
             switch (split_format[i]) {
-<<<<<<< HEAD
             case "%d":
                 day = date[i];
                 break;
@@ -194,20 +183,6 @@ function findPosY(obj) {
             case "%y":
                 year = date[i];
                 break;
-=======
-                case "%d":
-                    day = date[i];
-                    break;
-                case "%m":
-                    month = date[i] - 1;
-                    break;
-                case "%Y":
-                    year = date[i];
-                    break;
-                case "%y":
-                    year = date[i];
-                    break;
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
             }
             ++i;
         }

@@ -13,11 +13,7 @@
  * and modified for Django by Jannis Leidel, Travis Swicegood and Julien Phalip.
  *
  * Licensed under the New BSD License
-<<<<<<< HEAD
  * See: https://opensource.org/licenses/bsd-license.php
-=======
- * See: http://www.opensource.org/licenses/bsd-license.php
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
  */
 (function($) {
     'use strict';
@@ -62,22 +58,13 @@
                     addButton = $this.filter(":last").next().find("a");
                 }
             }
-<<<<<<< HEAD
             addButton.on('click', function(e) {
-=======
-            addButton.click(function(e) {
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
                 e.preventDefault();
                 var template = $("#" + options.prefix + "-empty");
                 var row = template.clone(true);
                 row.removeClass(options.emptyCssClass)
-<<<<<<< HEAD
                     .addClass(options.formCssClass)
                     .attr("id", options.prefix + "-" + nextIndex);
-=======
-                .addClass(options.formCssClass)
-                .attr("id", options.prefix + "-" + nextIndex);
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
                 if (row.is("tr")) {
                     // If the forms are laid out in table rows, insert
                     // the remove button into the last table cell:
@@ -104,11 +91,7 @@
                     addButton.parent().hide();
                 }
                 // The delete button of each row triggers a bunch of other things
-<<<<<<< HEAD
                 row.find("a." + options.deleteCssClass).on('click', function(e1) {
-=======
-                row.find("a." + options.deleteCssClass).click(function(e1) {
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
                     e1.preventDefault();
                     // Remove the parent form containing this button:
                     row.remove();
@@ -148,7 +131,6 @@
 
     /* Setup plugin defaults */
     $.fn.formset.defaults = {
-<<<<<<< HEAD
         prefix: "form", // The form prefix for your django formset
         addText: "add another", // Text for the add link
         deleteText: "remove", // Text for the delete link
@@ -159,37 +141,16 @@
         added: null, // Function called each time a new form is added
         removed: null, // Function called each time a form is deleted
         addButton: null // Existing add button to use
-=======
-        prefix: "form",          // The form prefix for your django formset
-        addText: "add another",      // Text for the add link
-        deleteText: "remove",      // Text for the delete link
-        addCssClass: "add-row",      // CSS class applied to the add link
-        deleteCssClass: "delete-row",  // CSS class applied to the delete link
-        emptyCssClass: "empty-row",    // CSS class applied to the empty row
-        formCssClass: "dynamic-form",  // CSS class applied to each form in a formset
-        added: null,          // Function called each time a new form is added
-        removed: null,          // Function called each time a form is deleted
-        addButton: null       // Existing add button to use
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
     };
 
 
     // Tabular inlines ---------------------------------------------------------
-<<<<<<< HEAD
     $.fn.tabularFormset = function(selector, options) {
         var $rows = $(this);
         var alternatingRows = function(row) {
             $(selector).not(".add-row").removeClass("row1 row2")
                 .filter(":even").addClass("row1").end()
                 .filter(":odd").addClass("row2");
-=======
-    $.fn.tabularFormset = function(options) {
-        var $rows = $(this);
-        var alternatingRows = function(row) {
-            $($rows.selector).not(".add-row").removeClass("row1 row2")
-            .filter(":even").addClass("row1").end()
-            .filter(":odd").addClass("row2");
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
         };
 
         var reinitDateTimeShortCuts = function() {
@@ -251,17 +212,10 @@
     };
 
     // Stacked inlines ---------------------------------------------------------
-<<<<<<< HEAD
     $.fn.stackedFormset = function(selector, options) {
         var $rows = $(this);
         var updateInlineLabel = function(row) {
             $(selector).find(".inline_label").each(function(i) {
-=======
-    $.fn.stackedFormset = function(options) {
-        var $rows = $(this);
-        var updateInlineLabel = function(row) {
-            $($rows.selector).find(".inline_label").each(function(i) {
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
                 var count = i + 1;
                 $(this).html($(this).html().replace(/(#\d+)/g, "#" + count));
             });
@@ -327,7 +281,6 @@
     $(document).ready(function() {
         $(".js-inline-admin-formset").each(function() {
             var data = $(this).data(),
-<<<<<<< HEAD
                 inlineOptions = data.inlineFormset,
                 selector;
             switch(data.inlineType) {
@@ -338,15 +291,6 @@
             case "tabular":
                 selector = inlineOptions.name + "-group .tabular.inline-related tbody:first > tr";
                 $(selector).tabularFormset(selector, inlineOptions.options);
-=======
-                inlineOptions = data.inlineFormset;
-            switch(data.inlineType) {
-            case "stacked":
-                $(inlineOptions.name + "-group .inline-related").stackedFormset(inlineOptions.options);
-                break;
-            case "tabular":
-                $(inlineOptions.name + "-group .tabular.inline-related tbody:first > tr").tabularFormset(inlineOptions.options);
->>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
                 break;
             }
         });
