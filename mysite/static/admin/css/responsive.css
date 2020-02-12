@@ -38,9 +38,17 @@ input[type="submit"], button {
     /* Header */
 
     #header {
+<<<<<<< HEAD
         flex-direction: column;
         padding: 15px 30px;
         justify-content: flex-start;
+=======
+        display: flex;
+        flex-direction: column;
+        padding: 15px 30px;
+        height: auto;
+        line-height: 1;
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
     }
 
     #branding h1 {
@@ -205,13 +213,21 @@ input[type="submit"], button {
         min-height: 0;
     }
 
+<<<<<<< HEAD
     fieldset .fieldBox {
+=======
+    fieldset .field-box {
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
         float: none;
         margin: 0 -10px;
         padding: 0 10px;
     }
 
+<<<<<<< HEAD
     fieldset .fieldBox + .fieldBox {
+=======
+    fieldset .field-box + .field-box {
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
         margin-top: 10px;
         padding-top: 10px;
         border-top: 1px solid #eee;
@@ -570,7 +586,11 @@ input[type="submit"], button {
         width: auto;
     }
 
+<<<<<<< HEAD
     fieldset .fieldBox + .fieldBox {
+=======
+    fieldset .field-box + .field-box {
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
         margin-top: 15px;
         padding-top: 15px;
     }
@@ -808,16 +828,23 @@ input[type="submit"], button {
         width: 100%;
     }
 
+<<<<<<< HEAD
     .submit-row input, .submit-row input.default, .submit-row a, .submit-row a.closelink {
+=======
+    .submit-row input, .submit-row input.default, .submit-row a {
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
         float: none;
         margin: 0 0 10px;
         text-align: center;
     }
 
+<<<<<<< HEAD
     .submit-row a.closelink {
         padding: 10px 0;
     }
 
+=======
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
     .submit-row p.deletelink-box {
         order: 4;
     }

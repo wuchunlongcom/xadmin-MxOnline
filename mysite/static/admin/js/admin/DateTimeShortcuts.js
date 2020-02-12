@@ -20,10 +20,17 @@
         dismissClockFunc: [],
         dismissCalendarFunc: [],
         calendarDivName1: 'calendarbox', // name of calendar <div> that gets toggled
+<<<<<<< HEAD
         calendarDivName2: 'calendarin', // name of <div> that contains calendar
         calendarLinkName: 'calendarlink', // name of the link that is used to toggle
         clockDivName: 'clockbox', // name of clock <div> that gets toggled
         clockLinkName: 'clocklink', // name of the link that is used to toggle
+=======
+        calendarDivName2: 'calendarin',  // name of <div> that contains calendar
+        calendarLinkName: 'calendarlink',// name of the link that is used to toggle
+        clockDivName: 'clockbox',        // name of clock <div> that gets toggled
+        clockLinkName: 'clocklink',      // name of the link that is used to toggle
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
         shortCutsClass: 'datetimeshortcuts', // class of the clock and cal shortcuts
         timezoneWarningClass: 'timezonewarning', // class of the warning for timezone mismatch
         timezoneOffset: 0,
@@ -63,6 +70,10 @@
         },
         // Add a warning when the time zone in the browser and backend do not match.
         addTimezoneWarning: function(inp) {
+<<<<<<< HEAD
+=======
+            var $ = django.jQuery;
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
             var warningClass = DateTimeShortcuts.timezoneWarningClass;
             var timezoneOffset = DateTimeShortcuts.timezoneOffset / 3600;
 
@@ -72,7 +83,11 @@
             }
 
             // Check if warning is already there.
+<<<<<<< HEAD
             if (inp.parentNode.querySelectorAll('.' + warningClass).length) {
+=======
+            if ($(inp).siblings('.' + warningClass).length) {
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
                 return;
             }
 
@@ -94,11 +109,21 @@
             }
             message = interpolate(message, [timezoneOffset]);
 
+<<<<<<< HEAD
             var warning = document.createElement('span');
             warning.className = warningClass;
             warning.textContent = message;
             inp.parentNode.appendChild(document.createElement('br'));
             inp.parentNode.appendChild(warning);
+=======
+            var $warning = $('<span>');
+            $warning.attr('class', warningClass);
+            $warning.text(message);
+
+            $(inp).parent()
+                .append($('<br>'))
+                .append($warning);
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
         },
         // Add clock widget to a given field
         addClock: function(inp) {
@@ -112,7 +137,11 @@
             inp.parentNode.insertBefore(shortcuts_span, inp.nextSibling);
             var now_link = document.createElement('a');
             now_link.setAttribute('href', "#");
+<<<<<<< HEAD
             now_link.textContent = gettext('Now');
+=======
+            now_link.appendChild(document.createTextNode(gettext('Now')));
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
             now_link.addEventListener('click', function(e) {
                 e.preventDefault();
                 DateTimeShortcuts.handleClockQuicklink(num, -1);
@@ -342,7 +371,11 @@
                 e.preventDefault();
                 DateTimeShortcuts.dismissCalendar(num);
             });
+<<<<<<< HEAD
             document.addEventListener('keyup', function(event) {
+=======
+            django.jQuery(document).bind('keyup', function(event) {
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
                 if (event.which === 27) {
                     // ESC key closes popup
                     DateTimeShortcuts.dismissCalendar(num);
@@ -398,11 +431,19 @@
         handleCalendarCallback: function(num) {
             var format = get_format('DATE_INPUT_FORMATS')[0];
             // the format needs to be escaped a little
+<<<<<<< HEAD
             format = format.replace('\\', '\\\\')
                 .replace('\r', '\\r')
                 .replace('\n', '\\n')
                 .replace('\t', '\\t')
                 .replace("'", "\\'");
+=======
+            format = format.replace('\\', '\\\\');
+            format = format.replace('\r', '\\r');
+            format = format.replace('\n', '\\n');
+            format = format.replace('\t', '\\t');
+            format = format.replace("'", "\\'");
+>>>>>>> 63dfa81123beb2cff90ef876d41f9c177fbc8155
             return function(y, m, d) {
                 DateTimeShortcuts.calendarInputs[num].value = new Date(y, m - 1, d).strftime(format);
                 DateTimeShortcuts.calendarInputs[num].focus();
