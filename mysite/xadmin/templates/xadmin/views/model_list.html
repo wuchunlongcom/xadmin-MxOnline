@@ -27,7 +27,13 @@
   {% if has_add_permission %}
     <a href="{{add_url}}" class="btn btn-primary"><i class="fa fa-plus"></i> 
     {% blocktrans with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktrans %}</a>
-  {% endif %}
+  {% endif %}&nbsp;&nbsp;
+
+  {# 添加自定义按钮 #}
+  <div class="btn-toolbar pull-right" role="toolbar" aria-label="...">  
+      {% view_block 'my_top_toolbar' %}
+  </div>
+
 {% endblock nav_btns %}
 
 {% block content %}
