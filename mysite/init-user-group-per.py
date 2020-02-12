@@ -63,16 +63,16 @@ if __name__ == "__main__":
     print('end create all user and group and permission')
     
     
-#     from basedao import BaseDAO 
-#        
-#     items = {'name':'北京大学','address':'北京','num':10}
-#     BaseDAO(School).save(items)
-# 
-#     items = [{'name':'清华大学','address':'北京','num':20}, {'name':'复旦大学','address':'上海','num':30}]
-#     BaseDAO(School).save_batch(items)
-#     
-#     items = [{'num':20}, {'num':25}]
-#     BaseDAO(Threshold).save_batch(items)
+    from basedao import BaseDAO 
+        
+    items = {'name':'北京大学','address':'北京','num':10}
+    BaseDAO(School).save(items)
+ 
+    items = [{'name':'清华大学','address':'北京','num':20}, {'name':'复旦大学','address':'上海','num':30}]
+    BaseDAO(School).save_batch(items)
+     
+    items = [{'num':20}, {'num':25}]
+    BaseDAO(Threshold).save_batch(items)
         
 """    
     # 创建4个普通用户，默认user.is_staff = False  不允许登录后台
