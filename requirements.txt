@@ -22,7 +22,7 @@ openpyxl==2.6.0
 Pillow==5.4.1
 pymysql
 pytz==2018.9
-PyYAML==3.13
+PyYAML==5.1
 six==1.12.0
 tablib==0.12.1
 unicodecsv==0.14.1
