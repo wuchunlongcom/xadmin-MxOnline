@@ -545,10 +545,10 @@ class SchoolAdmin(object):
     
     
     # 配置导入导出按钮
-    import_export_args = {
-        'import_resource_class': SchoolResource,
-        'export_resource_class': SchoolResource,
-    }
+#     import_export_args = {
+#         'import_resource_class': SchoolResource,
+#         'export_resource_class': SchoolResource,
+#     }
 
     
 xadmin.site.register(School, SchoolAdmin)
