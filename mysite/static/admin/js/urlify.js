@@ -128,7 +128,11 @@
 
     var Downcoder = {
         'Initialize': function() {
+<<<<<<< HEAD
             if (Downcoder.map) { // already made
+=======
+            if (Downcoder.map) {  // already made
+>>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
                 return;
             }
             Downcoder.map = {};
@@ -164,6 +168,7 @@
         if (!allowUnicode) {
             s = downcode(s);
         }
+<<<<<<< HEAD
         var hasUnicodeChars = /[^\u0000-\u007f]/.test(s);
         // Remove English words only if the string contains ASCII (English)
         // characters.
@@ -177,12 +182,22 @@
             var r = new RegExp('\\b(' + removeList.join('|') + ')\\b', 'gi');
             s = s.replace(r, '');
         }
+=======
+        var removelist = [
+            "a", "an", "as", "at", "before", "but", "by", "for", "from", "is",
+            "in", "into", "like", "of", "off", "on", "onto", "per", "since",
+            "than", "the", "this", "that", "to", "up", "via", "with"
+        ];
+        var r = new RegExp('\\b(' + removelist.join('|') + ')\\b', 'gi');
+        s = s.replace(r, '');
+>>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
         // if downcode doesn't hit, the char will be stripped here
         if (allowUnicode) {
             // Keep Unicode letters including both lowercase and uppercase
             // characters, whitespace, and dash; remove other characters.
             s = XRegExp.replace(s, XRegExp('[^-_\\p{L}\\p{N}\\s]', 'g'), '');
         } else {
+<<<<<<< HEAD
             s = s.replace(/[^-\w\s]/g, ''); // remove unneeded chars
         }
         s = s.replace(/^\s+|\s+$/g, ''); // trim leading/trailing spaces
@@ -190,6 +205,15 @@
         s = s.substring(0, num_chars); // trim to first num_chars chars
         s = s.replace(/-+$/g, ''); // trim any trailing hyphens
         return s.toLowerCase(); // convert to lowercase
+=======
+            s = s.replace(/[^-\w\s]/g, '');  // remove unneeded chars
+        }
+        s = s.replace(/^\s+|\s+$/g, '');   // trim leading/trailing spaces
+        s = s.replace(/[-\s]+/g, '-');     // convert spaces to hyphens
+        s = s.substring(0, num_chars);     // trim to first num_chars chars
+        s = s.replace(/-+$/g, '');         // trim any trailing hyphens
+        return s.toLowerCase();            // convert to lowercase
+>>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
     }
     window.URLify = URLify;
 })();

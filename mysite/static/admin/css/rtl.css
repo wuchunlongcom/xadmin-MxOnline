@@ -35,7 +35,11 @@ th {
     margin-right: 1.5em;
 }
 
+<<<<<<< HEAD
 .viewlink, .addlink, .changelink {
+=======
+.addlink, .changelink {
+>>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
     padding-left: 0;
     padding-right: 16px;
     background-position: 100% 1px;
@@ -170,11 +174,14 @@ form .aligned p.help, form .aligned div.help {
     clear: right;
 }
 
+<<<<<<< HEAD
 form .aligned ul {
     margin-right: 163px;
     margin-left: 0;
 }
 
+=======
+>>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
 form ul.inline li {
     float: right;
     padding-right: 0;
@@ -185,7 +192,11 @@ input[type=submit].default, .submit-row input.default {
     float: left;
 }
 
+<<<<<<< HEAD
 fieldset .fieldBox {
+=======
+fieldset .field-box {
+>>>>>>> ac31e32ee02d5e8dd84ebc466c678a256a789bf9
     float: right;
     margin-left: 20px;
     margin-right: 0;
