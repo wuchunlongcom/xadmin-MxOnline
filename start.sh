@@ -23,36 +23,15 @@ function build_venv {
 function rebuild_db {
 	logging "Clean"
 	rm -rf "${BASE_DIR}/mysite/db.sqlite3"
-
-	rm -rf "users/migrations/0*.*"
-	rm -rf "organization/migrations/0*.*"
-	rm -rf "course/migrations/0*.*"	
-	rm -rf "operation/migrations/0*.*"			
-		
-
-	rm -rf "xadmin/migrations/0*.*"
 	
-	logging "makemigrations" "makemigrations" "users"
-	python "${BASE_DIR}/mysite/manage.py" "makemigrations" "users"
-
-	logging "makemigrations" "makemigrations" "organization"
-	python "${BASE_DIR}/mysite/manage.py" "makemigrations" "organization"
-
-	logging "makemigrations" "makemigrations" "course"
-	python "${BASE_DIR}/mysite/manage.py" "makemigrations" "course"
-
-	logging "makemigrations" "makemigrations" "operation"
-	python "${BASE_DIR}/mysite/manage.py" "makemigrations" "operation"
-
-	logging "makemigrations" "makemigrations" "xadmin"
-	python "${BASE_DIR}/mysite/manage.py" "makemigrations" "xadmin"
-
-
+	rm -rf "${BASE_DIR}/mysite/app/migrations/0001_initial.py"
+	python "${BASE_DIR}/mysite/manage.py" "makemigrations" 'app'
 
 	logging "migrate"
 	python "${BASE_DIR}/mysite/manage.py" "migrate"
 	
 	logging "initdb.py"
+	python "${BASE_DIR}/mysite/init-user-group-per.py"
 	python "${BASE_DIR}/mysite/initdb.py"
 }
 
