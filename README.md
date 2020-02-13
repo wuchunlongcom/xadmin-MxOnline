@@ -1,8 +1,9 @@
- 吴春龙  2019.12.20
-# MxOnline  在线教育平台  部署正常  
+吴春龙 wuchunlongcom@outlook.com 134 0255 3918     2019.12.20
+
+# MxOnline  在线教育平台
 ## 环境
 python 3.7.5
-django版本: 2.2.6。
+django版本: 2.0.2。
 
 
 ## 修改BUG记录

@@ -26,19 +26,17 @@
       {% view_block 'top_navbar' %}
     </div>
   </div>
-
   {% endblock %}
-
   <div id="body-content" class="clearfix row">
     <div id="left-side" class="col-sm-1 col-md-2">
-      {% block navbar %}
-        {% if nav_menu %} <!-- nav_menu列表字典 数据  -->
-          {% include menu_template %}  <!-- 左边菜单  -->
+        {% block navbar %}
+        {% if nav_menu %}
+          {% include menu_template %}
         {% else %}
           <p>{% trans "You don't have permission to edit anything." %}</p>
         {% endif %}
       {% endblock %}
-      {% view_block 'left_navbar' %} <!-- 作用？ -->
+      {% view_block 'left_navbar' %}
     </div>
 
     <div id="content-block" class="col-sm-11 col-md-10">
@@ -65,7 +63,7 @@
         <div class="navbar-header">
           {% view_block 'nav_toggles' %}
           {% block nav_toggles %}
-              {% include "xadmin/includes/toggle_back.html" %}
+          {% include "xadmin/includes/toggle_back.html" %}
           {% endblock %}
 
           <a class="navbar-brand" data-toggle="collapse" data-target="#top-nav .navbar-collapse">
@@ -98,7 +96,7 @@
       {% endblock messages %}
 
       {% block content %}
-          {{ content }}
+      {{ content }}
       {% endblock %}
     </div>
   </div>
