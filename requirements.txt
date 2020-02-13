@@ -21,3 +21,4 @@ openpyxl
 odfpy
 pyyaml
 MarkupPy
+captcha
