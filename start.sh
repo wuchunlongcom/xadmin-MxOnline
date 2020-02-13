@@ -12,12 +12,12 @@ function logging {
 }
 
 function build_venv {
-    # if [ ! -d env ]; then
-    #     virtualenv env
-    # fi
-    # . env/bin/activate
+    if [ ! -d env375 ]; then
+        virtualenv env375
+    fi
+    . env375/bin/activate
 
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
 }
 
 function rebuild_db {

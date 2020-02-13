@@ -11,4 +11,13 @@ future==0.17.1
 httplib2==0.12.3
 six==1.12.0
 ilds
-
+xlsxwriter
+django-markdown-deux
+xlsxwriter
+tablib==0.14.0
+diff_match_patch
+xlwt
+openpyxl
+odfpy
+pyyaml
+MarkupPy

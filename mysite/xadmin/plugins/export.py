@@ -275,5 +275,5 @@ class ExportPlugin(BaseAdminPlugin):
         return item
 
 
-site.register_plugin(ExportMenuPlugin, ListAdminView)
-site.register_plugin(ExportPlugin, ListAdminView)
+# site.register_plugin(ExportMenuPlugin, ListAdminView)
+# site.register_plugin(ExportPlugin, ListAdminView)
