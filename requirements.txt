@@ -22,3 +22,4 @@ odfpy
 pyyaml
 MarkupPy
 captcha
+django-pure-pagination
