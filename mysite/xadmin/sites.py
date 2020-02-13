@@ -243,7 +243,8 @@ class AdminSite(object):
                 self._registry[model] = admin_class
             else:
                 if model in self._registry_avs:
-                    raise AlreadyRegistered('The admin_view_class %s is already registered' % model.__name__)
+                    pass ########
+                    #raise AlreadyRegistered('The admin_view_class %s is already registered' % model.__name__)
                 if options:
                     options['__module__'] = __name__
                     admin_class = type(str(

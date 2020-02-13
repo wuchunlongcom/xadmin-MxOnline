@@ -14,8 +14,19 @@ SECRET_KEY = 'm*#@l&s7f@ad&ei!d=bxx+@6b0hqoy-sql#4zo00s2%^s@8rbv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+# 设置auth允许的函数
+AUTHENTICATION_BACKENDS = (
+    'users.views.CustomBackend',
+)
+
+
+# LANGUAGES = (
+#     ('en', _('English')),
+#     ('zh-hans', _('Chinese')),
+# )
+
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -32,8 +43,17 @@ INSTALLED_APPS = [
     'crispy_forms',
     # django-reversion 版本控制
     'reversion',
-    'app.apps.AppConfig',
+    
+    #'app.apps.AppConfig',
     'import_export',
+    
+    'captcha',    
+    'course.apps.CourseConfig',
+    'operation.apps.OperationConfig',
+    'organization.apps.OrganizationConfig',
+    'users.apps.UsersConfig',     
+    'DjangoUeditor',
+    'pure_pagination',
 
 ]
 
@@ -61,6 +81,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #添加图片处理器，为了在课程列表中前面加上MEDIA_URL
+                'django.template.context_processors.media',
+
             ],
         },
     },
@@ -146,6 +169,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOCALE_PATHS = (
     os.path.join(os.path.dirname(BASE_DIR), 'xadmin', 'locale'),
 )
+
+AUTH_USER_MODEL = 'users.UserProfile'
+# 配置邮箱发邮件的相关功能 
+EMAIL_USE_TLS= True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #这一项是固定的
+EMAIL_HOST = 'smtp.163.com' # SMTP服务器主机 163
+EMAIL_PORT = 25 # smtp服务固定的端口是25
+EMAIL_HOST_USER = 'wcl6005@163.com' #发送邮件的邮箱
+EMAIL_HOST_PASSWORD = 'wcl6005' #在邮箱中设置的客户端授权密码
+EMAIL_FROM = 'python<wcl6005@163.com>' #收件人看到的发件人 <此处要和发送邮件的邮箱相同>
+
 
 # print(LOCALE_PATHS)
 
