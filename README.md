@@ -1,16 +1,26 @@
 # MxOnline  在线教育平台
-
-## 修改BUG记录
+## 环境
 ```
-一、解决注销界面关不掉问题 2019.12.20
-二、认证和权限。用户中修改组为穿梭框。2019.12.25
-三、增加按钮和自定义页面。2019.12.28
-四、解决登录慢问题 2019.12.30
-五、数据导入、导出，解决csv导出中文乱码问题 2019.12.31
-六、图标升级显示  2020.01.03
-```
+python 3.7.5
+django版本: 2.2.6。
 
-### 官方源码   https://github.com/mtianyan/Mxonline3
+./start.sh -i
+http://localhost:8000/
+http://localhost:8000/xadmin/     admin/admin
+```
+###需要从后台上传有关图像,才能看效果。参见（有道云笔记）：xadmin-MxOnline说明书
+
+```
+一、上传图像
+1、上传轮播图
+http://localhost:8000/xadmin/     admin/admin
+
+【轮播图】-【增加 轮播图】:桌面--图片4张 1_1200x478.jpg -- 4_1200x478.jpg
+
+2、上传课程封面图图像  语文、 数学、英语、政治   应该233x190     
+3、上传课程图像（轮播图像）应该  470x300   实际470x300
+
+```
 ```
 系统介绍：
 
@@ -32,8 +42,9 @@
     日志记录：记录后台人员的操作
 ```
 
-### Django项目于之在线教育平台网站的实战开发（一） https://blog.csdn.net/qq_41782425/article/details/89788542
-
+### Django项目在线教育平台网站的实战开发
+(一） https://blog.csdn.net/qq_41782425/article/details/89788542
+(二）官方源码 ：https://github.com/mtianyan/Mxonline3
 
 ### 简书学习的代码
 ### 参考文档 https://www.jianshu.com/p/ec284482fc89
@@ -47,16 +58,3 @@
 https://s3.bytecdn.cn/aweme/resource/web/static/image/index/tvc-v2_30097df.mp4 </br>
 把上面链接复制到视频--“访问地址” 里面就可以播放了。
 
-```
-恢复历史提交
-1、git reset --hard  5833756f900691   
-2、git reset --hard  2a53860541a046
-
-
-```
-
-```
-TEL: 134 0255 3918
-EMAIL: wuchunlongcom@outlook.com     
-DATE: 2019.12.20
-```

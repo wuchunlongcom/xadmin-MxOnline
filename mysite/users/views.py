@@ -82,7 +82,6 @@ class IndexView(View):
         banner_courses = Course.objects.filter(is_banner=True)[:3]
         #课程机构
         course_orgs = Course.objects.all()[:15]
-        print('ok====ok')
         return render(request,'index.html',{
             'all_banners':all_banners,
             'courses':courses,
