@@ -42,6 +42,7 @@ http://localhost:8000/xadmin/     admin/admin
     日志记录：记录后台人员的操作
 ```
 
+```
 ### Django项目在线教育平台网站的实战开发
 (一） https://blog.csdn.net/qq_41782425/article/details/89788542
 (二）官方源码 ：https://github.com/mtianyan/Mxonline3
@@ -57,4 +58,12 @@ http://localhost:8000/xadmin/     admin/admin
 ### 播放视频网址
 https://s3.bytecdn.cn/aweme/resource/web/static/image/index/tvc-v2_30097df.mp4 </br>
 把上面链接复制到视频--“访问地址” 里面就可以播放了。
+```
+
+## Generate static files
+```
+cd ../mysite
+rm -rf static
+python manage.py collectstatic
+```
 
